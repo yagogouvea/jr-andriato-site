@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JR Andriato Estética Automotiva</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'McLaren', sans-serif;
+      background: linear-gradient(to right, #000000, #0d1a33);
+      color: #fff;
+    }
+
+    .header {
+      background: linear-gradient(to right, #000000, #0d1a33);
+      padding: 30px 0 10px;
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 240px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .menu li a {
+      color: #086BFF;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 10px 20px;
+      background: rgba(8, 107, 255, 0.1);
+      border-radius: 12px;
+      transition: background 0.3s, transform 0.3s;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(8, 107, 255, 0.2);
+    }
+
+    .menu li a:hover {
+      background: #086BFF;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .hero {
+      padding: 100px 20px;
+      background: url('img/carro.jpg') no-repeat center 40% / cover;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #000000dd 40%, #0d1a33dd);
+      z-index: 0;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to bottom, transparent, #0d1a33);
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-cta {
+      background-color: #086BFF;
+      color: white;
+      padding: 18px 38px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 14px rgba(8, 107, 255, 0.4);
+    }
+
+    .btn-cta:hover {
+      background-color: #005edb;
+      transform: scale(1.05);
+    }
+
+    .servicos {
+      padding: 80px 20px;
+      background: linear-gradient(to right, #000000, #0d1a33);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #086BFF;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .servico {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(8, 107, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .servico:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(8, 107, 255, 0.4);
+    }
+
+    .servico img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+    }
+
+    .servico:hover img {
+      filter: brightness(1.05);
+    }
+
+    .servico h3 {
+      margin: 0;
+      padding: 20px;
+      font-size: 1.2rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 0 0 20px 20px;
+      color: #fff;
+    }
+
+    .contato {
+      padding: 80px 20px;
+      background: linear-gradient(to right, #000000, #0d1a33);
+      text-align: center;
+    }
+
+    .rodape {
+      padding: 20px;
+      background: linear-gradient(to right, #000000, #0d1a33);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Menu Mobile */
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      color: #086BFF;
+      background: rgba(8, 107, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin: 10px auto;
+      text-align: center;
+      width: 48px;
+      box-shadow: 0 2px 6px rgba(8, 107, 255, 0.2);
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      background-color: #0d1a33;
+      width: 100%;
+      padding: 20px 10px;
+      gap: 12px;
+      margin-top: 10px;
+      align-items: stretch;
+    }
+
+    .menu-mobile li {
+      list-style: none;
+    }
+
+    .menu-mobile a {
+      display: block;
+      width: 100%;
+      background-color: rgba(8, 107, 255, 0.1);
+      color: #086BFF;
+      font-weight: bold;
+      text-align: center;
+      padding: 16px 0;
+      border-radius: 16px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(8, 107, 255, 0.15);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .menu-mobile a:hover {
+      background-color: #086BFF;
+      color: white;
+      transform: scale(1.03);
+    }
+
+    .menu-mobile.show {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-flex">
+      <img src="img/logo/logo.png" alt="JR Andriato Logo" class="logo">
+      <nav>
+        <ul class="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+    <ul class="menu-mobile" id="menuMobile">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="container">
+      <h1>Estética automotiva com excelência e atenção aos mínimos detalhes</h1>
+      <a href="https://wa.me/5511947202110" class="btn-cta">Agende seu horário</a>
+    </div>
+  </section>
+
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <h2 class="section-title">Serviços em Destaque</h2>
+      <div class="servicos-grid">
+        <div class="servico">
+          <img src="img/servicos/lavagem-de-motor.jpg" alt="Lavagem de Motor">
+          <h3>Lavagem de Motor</h3>
+        </div>
+        <div class="servico">
+          <img src="img/servicos/higienizacao-interna.jpg" alt="Higienização Interna">
+          <h3>Higienização Interna</h3>
+        </div>
+        <div class="servico">
+          <img src="img/servicos/polimento-de-farol.jpg" alt="Polimento de Farol">
+          <h3>Polimento de Farol</h3>
+        </div>
+        <div class="servico">
+          <img src="img/servicos/vitrificacao.jpg" alt="Vitrificação">
+          <h3>Vitrificação</h3>
+        </div>
+        <div class="servico">
+          <img src="img/servicos/lavagem-simples-e-tecnica.jpg" alt="Lavagem Simples e Técnica">
+          <h3>Lavagem Simples e Técnica</h3>
+        </div>
+        <div class="servico">
+          <img src="img/servicos/polimento-automotivo.jpg" alt="Polimento Automotivo">
+          <h3>Polimento Automotivo</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <div class="container">
+      <h2 class="section-title">Fale Conosco</h2>
+      <p>Agende seu horário pelo WhatsApp ou nos envie uma mensagem:</p>
+      <a href="https://wa.me/5511947202110" class="btn-cta">WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>&copy; 2025 JR Andriato Estética Automotiva. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuMobile');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
